@@ -1,0 +1,6 @@
+fastapi[all]>0.115,<0.116
+alembic>1.14,<1.15
+passlib[bcrypt] 
+psycopg2-binary
+pyjwt
+sentinelhub
