@@ -50,6 +50,7 @@ else:
 # target_metadata = mymodel.Base.metadata
 #import models
 from model.users import *
+from model.app import *
 target_metadata = Base.metadata
 
 # other values from the config, defined by the needs of env.py,

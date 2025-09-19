@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NDRE Viewer</title>
+</head>
+<body>
+    <h1>NDRE Viewer</h1>
+    <img id="ndreImage" src="http://soheil:8000/api/v1/app/lands/2/histo" alt="NDRE Image" />
+
+    <script>
+        const img = document.getElementById("ndreImage");
+        img.onload = () => console.log("NDRE Image loaded successfully");
+        img.onerror = () => alert("Failed to load NDRE PNG");
+    </script>
+</body>
+</html>

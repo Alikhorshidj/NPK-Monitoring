@@ -4,3 +4,7 @@ passlib[bcrypt]
 psycopg2-binary
 pyjwt
 sentinelhub
+datetime
+matplotlib
+shapely
+starlette

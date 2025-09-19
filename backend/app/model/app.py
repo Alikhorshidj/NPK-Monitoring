@@ -7,6 +7,7 @@ from sqlalchemy import (
     Integer,
     DateTime,
     ForeignKey,
+    Date
 )
 from core.database import Base
 from sqlalchemy.orm import relationship
@@ -19,6 +20,8 @@ class LandModel(Base):
     landname = Column(String(250), nullable=False, unique=False)
     group_id = Column(Integer, nullable=False)
     is_completed = Column(Boolean, default=False)
+    acquisition_date = Column(Date, nullable=True) 
+    #in_procces= Column(Boolean, default=False) 
 
     created_date = Column(DateTime, server_default=func.now())
     updated_date = Column(
