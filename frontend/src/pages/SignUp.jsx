@@ -7,7 +7,7 @@ import Button from "../components/ui/Button";
 
 export default function SignUp() {
   const nav = useNavigate();
-  const [form, setForm] = useState({ firstname:"", lastname:"", username:"", password:"", confirm:"" });
+  const [form, setForm] = useState({ firstname:"", lastname:"", username:"", password:"", password_confirm:"" });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [ok, setOk] = useState("");
@@ -17,7 +17,7 @@ export default function SignUp() {
     setError("");
     setOk("");
     if (form.password.length < 6) return setError("Password must be at least 6 chars");
-    if (form.password !== form.confirm) return setError("Passwords do not match");
+    if (form.password !== form.password_confirm) return setError("Passwords do not match");
 
     setLoading(true);
     try {
