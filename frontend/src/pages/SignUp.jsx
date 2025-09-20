@@ -21,7 +21,7 @@ export default function SignUp() {
 
     setLoading(true);
     try {
-      const payload = { username: form.username, firstname: form.firstname, lastname: form.lastname, password: form.password };
+      const payload = { username: form.username, firstname: form.firstname, lastname: form.lastname, password: form.password, password_confirm: form.password_confirm };
 //      await api.post("/profile/register", payload);
       const res = await api.post("/profile/register", payload);
       console.log("REGISTER OK:", res.status, res.data);
@@ -48,8 +48,24 @@ export default function SignUp() {
           <Input label="Last name" placeholder="Ahmadi" value={form.lastname} onChange={e=>setForm(v=>({...v, lastname:e.target.value}))} required />
         </div>
         <Input label="Username" placeholder="yourname" value={form.username} onChange={e=>setForm(v=>({...v, username:e.target.value}))} required />
-        <Input label="Password" type="password" placeholder="••••••••" value={form.password} onChange={e=>setForm(v=>({...v, password:e.target.value}))} required />
-        <Input label="Confirm password" type="password" placeholder="••••••••" value={form.confirm} onChange={e=>setForm(v=>({...v, confirm:e.target.value}))} required />
+        {/* <Input label="Password" type="password" placeholder="••••••••" value={form.password} onChange={e=>setForm(v=>({...v, password:e.target.value}))} required /> */}
+                <Input
+                  label="Password"
+                  type="password"
+                  placeholder="••••••••"
+                  value={form.password}
+                  onChange={(e)=>setForm(v=>({...v, password:e.target.value}))}
+                  required
+                />
+        {/* <Input label="Confirm password" type="password" placeholder="••••••••" value={form.password_confirm} onChange={e=>setForm(v=>({...v, password_confirm:e.target.value}))} required /> */}
+                <Input
+                  label="Password_Confirm"
+                  type="password"
+                  placeholder="••••••••"
+                  value={form.password_confirmd}
+                  onChange={(e)=>setForm(v=>({...v, password_confirm:e.target.value}))}
+                  required
+                />
 
         {error && <div className="rounded-lg bg-red-50 text-red-700 px-3 py-2 text-sm">{error}</div>}
         {ok && <div className="rounded-lg bg-emerald-50 text-emerald-700 px-3 py-2 text-sm">{ok}</div>}
